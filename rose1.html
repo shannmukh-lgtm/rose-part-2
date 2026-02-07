@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Rose 🌹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .message {
+            color: #fff;
+            font-family: 'Georgia', serif;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Rose container */
+        .rose {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+            animation: sway 4s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        /* Stem */
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 300px;
+            background: linear-gradient(to bottom, #2d5016, #1a3a0f);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Leaves */
+        .leaf {
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background: linear-gradient(135deg, #3d7018, #2d5016);
+            border-radius: 0 50% 50% 0;
+            transform-origin: left center;
+        }
+
+        .leaf1 {
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-100%) rotate(-30deg);
+            animation: leafSway1 3s ease-in-out infinite;
+        }
+
+        .leaf2 {
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(10px) rotate(30deg) scaleX(-1);
+            animation: leafSway2 3s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes leafSway1 {
+            0%, 100% { transform: translateX(-100%) rotate(-30deg); }
+            50% { transform: translateX(-100%) rotate(-35deg); }
+        }
+
+        @keyframes leafSway2 {
+            0%, 100% { transform: translateX(10px) rotate(30deg) scaleX(-1); }
+            50% { transform: translateX(10px) rotate(35deg) scaleX(-1); }
+        }
+
+        /* Rose head */
+        .rose-head {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            animation: bloom 2s ease-out forwards;
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: translateX(-50%) scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Petals - outer layer */
+        .petal {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            border-radius: 50% 50% 50% 0;
+            transform-origin: bottom left;
+            box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.3),
+                        0 0 20px rgba(220, 20, 60, 0.4);
+        }
+
+        .petal1 {
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            animation: petalOpen1 1.5s ease-out 0.5s forwards;
+        }
+
+        .petal2 {
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(72deg);
+            animation: petalOpen2 1.5s ease-out 0.6s forwards;
+        }
+
+        .petal3 {
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(144deg);
+            animation: petalOpen3 1.5s ease-out 0.7s forwards;
+        }
+
+        .petal4 {
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(216deg);
+            animation: petalOpen4 1.5s ease-out 0.8s forwards;
+        }
+
+        .petal5 {
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(288deg);
+            animation: petalOpen5 1.5s ease-out 0.9s forwards;
+        }
+
+        @keyframes petalOpen1 {
+            from { transform: translate(-50%, -50%) rotate(0deg) scale(0.5); }
+            to { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+        }
+        @keyframes petalOpen2 {
+            from { transform: translate(-50%, -50%) rotate(72deg) scale(0.5); }
+            to { transform: translate(-50%, -50%) rotate(72deg) scale(1); }
+        }
+        @keyframes petalOpen3 {
+            from { transform: translate(-50%, -50%) rotate(144deg) scale(0.5); }
+            to { transform: translate(-50%, -50%) rotate(144deg) scale(1); }
+        }
+        @keyframes petalOpen4 {
+            from { transform: translate(-50%, -50%) rotate(216deg) scale(0.5); }
+            to { transform: translate(-50%, -50%) rotate(216deg) scale(1); }
+        }
+        @keyframes petalOpen5 {
+            from { transform: translate(-50%, -50%) rotate(288deg) scale(0.5); }
+            to { transform: translate(-50%, -50%) rotate(288deg) scale(1); }
+        }
+
+        /* Inner petals */
+        .inner-petal {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff1493 0%, #dc143c 100%);
+            border-radius: 50% 50% 50% 0;
+            transform-origin: bottom left;
+            box-shadow: inset -3px -3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .inner-petal1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(36deg) scale(0.8);
+            animation: innerPetalOpen1 1s ease-out 1.2s forwards;
+        }
+
+        .inner-petal2 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(108deg) scale(0.8);
+            animation: innerPetalOpen2 1s ease-out 1.3s forwards;
+        }
+
+        .inner-petal3 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(180deg) scale(0.8);
+            animation: innerPetalOpen3 1s ease-out 1.4s forwards;
+        }
+
+        .inner-petal4 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(252deg) scale(0.8);
+            animation: innerPetalOpen4 1s ease-out 1.5s forwards;
+        }
+
+        .inner-petal5 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(324deg) scale(0.8);
+            animation: innerPetalOpen5 1s ease-out 1.6s forwards;
+        }
+
+        @keyframes innerPetalOpen1 {
+            from { transform: translate(-50%, -50%) rotate(36deg) scale(0); }
+            to { transform: translate(-50%, -50%) rotate(36deg) scale(0.8); }
+        }
+        @keyframes innerPetalOpen2 {
+            from { transform: translate(-50%, -50%) rotate(108deg) scale(0); }
+            to { transform: translate(-50%, -50%) rotate(108deg) scale(0.8); }
+        }
+        @keyframes innerPetalOpen3 {
+            from { transform: translate(-50%, -50%) rotate(180deg) scale(0); }
+            to { transform: translate(-50%, -50%) rotate(180deg) scale(0.8); }
+        }
+        @keyframes innerPetalOpen4 {
+            from { transform: translate(-50%, -50%) rotate(252deg) scale(0); }
+            to { transform: translate(-50%, -50%) rotate(252deg) scale(0.8); }
+        }
+        @keyframes innerPetalOpen5 {
+            from { transform: translate(-50%, -50%) rotate(324deg) scale(0); }
+            to { transform: translate(-50%, -50%) rotate(324deg) scale(0.8); }
+        }
+
+        /* Center */
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #8b0000, #4a0000);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(220, 20, 60, 0.6);
+            animation: centerGlow 2s ease-in-out infinite 2s;
+        }
+
+        @keyframes centerGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(220, 20, 60, 0.6); }
+            50% { box-shadow: 0 0 30px rgba(220, 20, 60, 0.9); }
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+            box-shadow: 0 0 10px white;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ff69b4;
+            border-radius: 50%;
+            animation: float 4s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .rose {
+                width: 250px;
+                height: 450px;
+            }
+            
+            .message {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">For You 💕</div>
+        
+        <div class="rose">
+            <!-- Stem -->
+            <div class="stem"></div>
+            
+            <!-- Leaves -->
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
+            
+            <!-- Rose head -->
+            <div class="rose-head">
+                <!-- Outer petals -->
+                <div class="petal petal1"></div>
+                <div class="petal petal2"></div>
+                <div class="petal petal3"></div>
+                <div class="petal petal4"></div>
+                <div class="petal petal5"></div>
+                
+                <!-- Inner petals -->
+                <div class="inner-petal inner-petal1"></div>
+                <div class="inner-petal inner-petal2"></div>
+                <div class="inner-petal inner-petal3"></div>
+                <div class="inner-petal inner-petal4"></div>
+                <div class="inner-petal inner-petal5"></div>
+                
+                <!-- Center -->
+                <div class="center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create sparkles around the rose
+        function createSparkles() {
+            const roseHead = document.querySelector('.rose-head');
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (Math.random() * 150) + 'px';
+                sparkle.style.top = (Math.random() * 150) + 'px';
+                sparkle.style.animationDelay = (Math.random() * 2) + 's';
+                roseHead.appendChild(sparkle);
+            }
+        }
+
+        // Create floating particles
+        function createParticles() {
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = (Math.random() * window.innerWidth) + 'px';
+                particle.style.bottom = '0px';
+                particle.style.animationDelay = (Math.random() * 2) + 's';
+                particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+                
+                document.body.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 6000);
+            }, 300);
+        }
+
+        // Initialize
+        setTimeout(() => {
+            createSparkles();
+            createParticles();
+        }, 2000);
+    </script>
+</body>
+</html>
