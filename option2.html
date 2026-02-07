@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Knew It 🌹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, 
+                #8b7355 0%, 
+                #a0826d 20%, 
+                #c9a88a 40%,
+                #d4af8e 60%,
+                #b89968 80%,
+                #8b7355 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Desert sand dunes effect */
+        body::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: 
+                radial-gradient(ellipse 800px 300px at 20% 100%, #a0826d 0%, transparent 50%),
+                radial-gradient(ellipse 600px 250px at 60% 100%, #8b7355 0%, transparent 50%),
+                radial-gradient(ellipse 700px 200px at 90% 100%, #c9a88a 0%, transparent 50%);
+            opacity: 0.6;
+        }
+
+        /* Dust particles */
+        .dust {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: dustFloat 15s linear infinite;
+        }
+
+        @keyframes dustFloat {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Cracks in the ground */
+        .crack {
+            position: absolute;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.2);
+            transform-origin: left;
+        }
+
+        /* Message container */
+        .message-container {
+            text-align: center;
+            z-index: 10;
+            background: rgba(139, 115, 85, 0.3);
+            padding: 80px 60px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            line-height: 1.6;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .subtext {
+            font-size: 1.3em;
+            color: #f5deb3;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Tumbleweed effect */
+        .tumbleweed {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.4;
+            animation: tumble 20s linear infinite;
+        }
+
+        @keyframes tumble {
+            0% {
+                left: -100px;
+                transform: rotate(0deg);
+            }
+            100% {
+                left: 110%;
+                transform: rotate(720deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .message-container {
+                padding: 60px 40px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtext {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dust particles -->
+    <div class="dust" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="dust" style="left: 30%; animation-delay: 3s;"></div>
+    <div class="dust" style="left: 50%; animation-delay: 6s;"></div>
+    <div class="dust" style="left: 70%; animation-delay: 9s;"></div>
+    <div class="dust" style="left: 85%; animation-delay: 12s;"></div>
+
+    <!-- Ground cracks -->
+    <div class="crack" style="bottom: 15%; left: 20%; width: 150px; transform: rotate(-15deg);"></div>
+    <div class="crack" style="bottom: 25%; left: 60%; width: 200px; transform: rotate(10deg);"></div>
+    <div class="crack" style="bottom: 10%; left: 75%; width: 120px; transform: rotate(-5deg);"></div>
+
+    <!-- Tumbleweed -->
+    <div class="tumbleweed" style="bottom: 20%; animation-delay: 0s;">🌾</div>
+    <div class="tumbleweed" style="bottom: 30%; animation-delay: 8s;">🌾</div>
+
+    <div class="message-container">
+        <h1>
+            We know you'd choose this option first,<br>
+            we hoped you'd pick this.
+        </h1>
+        <p class="subtext">The desert knows what the heart wants...</p>
+    </div>
+
+    <script>
+        // Create more dust particles dynamically
+        function createDust() {
+            setInterval(() => {
+                const dust = document.createElement('div');
+                dust.className = 'dust';
+                dust.style.left = Math.random() * 100 + '%';
+                dust.style.animationDuration = (10 + Math.random() * 10) + 's';
+                dust.style.animationDelay = '0s';
+                
+                document.body.appendChild(dust);
+                
+                setTimeout(() => dust.remove(), 15000);
+            }, 2000);
+        }
+
+        createDust();
+    </script>
+</body>
+</html>
