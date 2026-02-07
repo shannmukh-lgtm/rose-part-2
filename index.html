@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Surabhi 🌹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffc3e1 50%, #ffb3d9 100%);
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating hearts background */
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff69b4;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+                opacity: 0.8;
+            }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #d63384;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+            line-height: 1.4;
+        }
+
+        .name {
+            color: #c2185b;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-family: 'Georgia', serif;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 350px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+        }
+
+        .btn1 {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c2185b 100%);
+            color: white;
+        }
+
+        .btn1:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(194, 24, 91, 0.4);
+        }
+
+        .btn2 {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .btn2:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+            animation: none;
+        }
+
+        .btn3 {
+            background: linear-gradient(135deg, #ffc1e3 0%, #ff91c7 100%);
+            color: #c2185b;
+        }
+
+        .btn3:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(255, 145, 199, 0.4);
+            background: linear-gradient(135deg, #ffd4ed 0%, #ffb3d9 100%);
+        }
+
+        /* Sparkle effect */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnim 1.5s ease-out forwards;
+        }
+
+        @keyframes sparkleAnim {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .btn {
+                min-width: 280px;
+                font-size: 1.1em;
+                padding: 18px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts -->
+    <div class="heart" style="top: 10%; left: 15%;">💖</div>
+    <div class="heart" style="top: 20%; left: 80%; animation-delay: 1s;">💕</div>
+    <div class="heart" style="top: 60%; left: 10%; animation-delay: 2s;">💗</div>
+    <div class="heart" style="top: 70%; left: 85%; animation-delay: 0.5s;">💖</div>
+    <div class="heart" style="top: 30%; left: 5%; animation-delay: 1.5s;">💕</div>
+    <div class="heart" style="top: 80%; left: 75%; animation-delay: 2.5s;">💗</div>
+    <div class="heart" style="top: 15%; left: 50%; animation-delay: 3s;">💖</div>
+    <div class="heart" style="top: 50%; left: 90%; animation-delay: 0.8s;">💕</div>
+    <div class="heart" style="top: 85%; left: 20%; animation-delay: 2.2s;">💗</div>
+    <div class="heart" style="top: 40%; left: 70%; animation-delay: 1.8s;">💖</div>
+
+    <div class="container">
+        <h1>Hi <span class="name">Surabhi</span>,<br>do you want another flower?</h1>
+        
+        <div class="buttons">
+            <a href="option1.html" class="btn btn1">🌹 Yes, We want another Rose</a>
+            <a href="option2.html" class="btn btn2">🌹🌹🌹 Yes yes yes!!</a>
+            <a href="option3.html" class="btn btn3">🌹 No, we got one rose and it's kind of enough</a>
+        </div>
+    </div>
+
+    <script>
+        // Create sparkles on button hover
+        const buttons = document.querySelectorAll('.btn');
+        
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', function(e) {
+                createSparkles(e);
+            });
+        });
+
+        function createSparkles(e) {
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    
+                    const rect = e.target.getBoundingClientRect();
+                    sparkle.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                    sparkle.style.top = (rect.top + Math.random() * rect.height) + 'px';
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1500);
+                }, i * 100);
+            }
+        }
+
+        // Add more floating hearts dynamically
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = ['💖', '💕', '💗'][Math.floor(Math.random() * 3)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = Math.random() * 100 + '%';
+            heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 6000);
+        }, 3000);
+    </script>
+</body>
+</html>
